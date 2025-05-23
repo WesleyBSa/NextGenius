@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/config.css">
+    <link rel="stylesheet" href="../css/config-layout.css">
+    <link rel="stylesheet" href="../css/layout-form.css">
+    <link rel="stylesheet" href="../css/registration.css">
+
+    <title>Formulário de Inscrição</title>
+</head>
+<body>
+    <div class="registration-form">
+             <h3 class="form-title">Formulário de Inscrição</h3>
+
+            <!-- Mensagem de sucesso/erro -->
+            <div id="form-messages" style="display: none; margin-bottom: 20px; padding: 15px; border-radius: 5px; font-weight: bold; text-align: center;"></div>
+            
+            <form id="inscricao-form" action="https://formspree.io/f/mqaqolak" method="POST">
+                <!-- Dados Pessoais -->
+                <div class="form-section">
+                    <h4 class="section-subtitle">📋 Dados Pessoais</h4>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="nome">Nome Completo *</label>
+                        <input type="text" class="form-control" id="nome" name="nome" required 
+                               placeholder="Digite seu nome completo">
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group form-col-2">
+                            <label class="form-label" for="email">E-mail *</label>
+                            <input type="email" class="form-control" id="email" name="email" required 
+                                   placeholder="seu@email.com">
+                        </div>
+                        <div class="form-group form-col-2">
+                            <label class="form-label" for="telefone">WhatsApp *</label>
+                            <input type="tel" class="form-control" id="telefone" name="telefone" required 
+                                   placeholder="(75) 99999-9999" maxlength="15">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group form-col-2">
+                            <label class="form-label" for="idade">Idade *</label>
+                            <input type="number" class="form-control" id="idade" name="idade" min="12" max="120" required>
+                        </div>
+                        <div class="form-group form-col-2">
+                            <label class="form-label" for="cidade">Cidade *</label>
+                            <input type="text" class="form-control" id="cidade" name="cidade" required 
+                                   placeholder="Sua cidade">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Informações Acadêmicas -->
+                <div class="form-section">
+                    <h4 class="section-subtitle">🎓 Informações Acadêmicas</h4>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="escolaridade">Escolaridade *</label>
+                        <select class="form-control form-select" id="escolaridade" name="escolaridade" required>
+                            <option value="" selected disabled>Selecione sua escolaridade</option>
+                            <option value="ensino-fundamental-cursando">Ensino Fundamental - Cursando</option>
+                            <option value="ensino-fundamental-completo">Ensino Fundamental - Completo</option>
+                            <option value="ensino-medio-cursando">Ensino Médio - Cursando</option>
+                            <option value="ensino-medio-completo">Ensino Médio - Completo</option>
+                            <option value="ensino-superior-cursando">Ensino Superior - Cursando</option>
+                            <option value="ensino-superior-completo">Ensino Superior - Completo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="escola">Escola/Instituição *</label>
+                        <select class="form-control form-select" id="escola-select" name="escola_select">
+                            <option value="" selected disabled>Selecione sua escola</option>
+                            <optgroup label="Escolas Públicas">
+                                <option value="ee-luiz-navarro-de-brito">E.E. Luiz Navarro de Brito</option>
+                                <option value="cetep/lnab">CETEP / LNAB</option>
+                                <option value="colegio-da-policia-militar-de-alagoinhas">Colégio da Polícia Militar de Alagoinhas</option>
+                                <option value="cma">CMA - Colégio Municipal de Alagoinhas</option>
+                                <option value="colegio-modelo-luis-eduardo-magalhaes">Colégio Modelo Luis Eduardo Magalhães</option>
+                                <option value="if-catu">IF/CATU - Instituto Federal</option>
+                                <option value="if-alagoinhas">IF/ALAGOINHAS - Instituto Federal</option>
+                            </optgroup>
+                            <optgroup label="Escolas Particulares">
+                                <option value="colegio-objetiva-ramili">Colégio Objetiva Ramili</option>
+                                <option value="colegio-dinamo">Colégio Dinamo</option>
+                                <option value="colegio-santissimo-sacramento">Colégio Santíssimo Sacramento</option>
+                                <option value="colegio-sao-francisco">Colégio São Francisco</option>
+                                <option value="colegio-santo-graal">Colégio Santo Graal</option>
+                                <option value="colegio-star">Colégio Star</option>
+                            </optgroup>
+                            <option value="outra">📝 Outra escola (especificar abaixo)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group" id="outra-escola-group" style="display: none;">
+                        <label class="form-label" for="outra-escola">Nome da sua escola *</label>
+                        <input type="text" class="form-control" id="outra-escola" name="outra_escola" 
+                               placeholder="Digite o nome da sua escola">
+                    </div>
+                </div>
+
+                <!-- Experiência e Interesses -->
+                <div class="form-section">
+                    <h4 class="section-subtitle">💻 Experiência e Interesses</h4>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="experiencia">Você já teve algum contato com programação? *</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="experiencia" value="nenhuma" required>
+                                <span class="radio-custom"></span>
+                                Nenhuma experiência
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="experiencia" value="basica">
+                                <span class="radio-custom"></span>
+                                Conhecimento básico (cursos online, tutoriais)
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="experiencia" value="intermediaria">
+                                <span class="radio-custom"></span>
+                                Conhecimento intermediário (já fiz alguns projetos)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="areas-interesse">Áreas de maior interesse (pode marcar várias):</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="areas_interesse" value="desenvolvimento-web">
+                                <span class="checkbox-custom"></span>
+                                Desenvolvimento Web (sites, sistemas)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="areas_interesse" value="mobile">
+                                <span class="checkbox-custom"></span>
+                                Desenvolvimento Mobile (apps)
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="areas_interesse" value="jogos">
+                                <span class="checkbox-custom"></span>
+                                Desenvolvimento de Jogos
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="areas_interesse" value="inteligencia-artificial">
+                                <span class="checkbox-custom"></span>
+                                Inteligência Artificial
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="areas_interesse" value="automacao">
+                                <span class="checkbox-custom"></span>
+                                Automação e Scripts
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="disponibilidade">Quantas horas por semana você pode dedicar aos estudos? *</label>
+                        <select class="form-control form-select" id="disponibilidade" name="disponibilidade" required>
+                            <option value="" selected disabled>Selecione sua disponibilidade</option>
+                            <option value="1-3-horas">1 a 3 horas por semana</option>
+                            <option value="4-6-horas">4 a 6 horas por semana</option>
+                            <option value="7-10-horas">7 a 10 horas por semana</option>
+                            <option value="mais-10-horas">Mais de 10 horas por semana</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Motivação -->
+                <div class="form-section">
+                    <h4 class="section-subtitle">🎯 Motivação</h4>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="curso">Curso de Interesse *</label>
+                        <select class="form-control form-select" id="curso" name="curso" required>
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="programacao-python-js">Programação (Python + JavaScript)</option>
+                            <option value="desenvolvimento-web">Desenvolvimento Web Completo</option>
+                            <option value="python-data-science">Python para Data Science</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="objetivos">Quais são seus principais objetivos com a programação? *</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="objetivos" value="carreira-profissional">
+                                <span class="checkbox-custom"></span>
+                                Construir uma carreira na área tech
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="objetivos" value="projetos-pessoais">
+                                <span class="checkbox-custom"></span>
+                                Desenvolver projetos pessoais
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="objetivos" value="freelancer">
+                                <span class="checkbox-custom"></span>
+                                Trabalhar como freelancer
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="objetivos" value="curiosidade">
+                                <span class="checkbox-custom"></span>
+                                Curiosidade e aprendizado pessoal
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="objetivos" value="automatizar-tarefas">
+                                <span class="checkbox-custom"></span>
+                                Automatizar tarefas do dia a dia
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="mensagem">Conte-nos um pouco mais sobre você e suas expectativas: *</label>
+                        <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required 
+                                  placeholder="Ex: Como você conheceu o NextGenius? O que mais te motiva a aprender programação? Tem alguma dúvida específica?"></textarea>
+                    </div>
+                </div>
+
+                <!-- Como nos conheceu -->
+                <div class="form-section">
+                    <h4 class="section-subtitle">📢 Como nos conheceu?</h4>
+                    
+                    <div class="form-group">
+                        <label class="form-label" for="como-conheceu">Como você ficou sabendo do NextGenius?</label>
+                        <select class="form-control form-select" id="como-conheceu" name="como_conheceu">
+                            <option value="" selected disabled>Selecione uma opção</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="google">Pesquisa no Google</option>
+                            <option value="indicacao-amigo">Indicação de amigo/familiar</option>
+                            <option value="escola">Divulgação na escola</option>
+                            <option value="evento">Evento/Palestra</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Campos ocultos -->
+                <input type="hidden" name="_subject" value="🎓 Nova Inscrição NextGenius - Formulário Completo">
+                
+                <div class="form-terms">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="aceita_termos" required>
+                        <span class="checkbox-custom"></span>
+                        Eu concordo em receber comunicações do NextGenius por email e WhatsApp sobre o curso e aceito os termos de uso. *
+                    </label>
+                </div>
+                
+                <button type="submit" class="submit-btn" id="submit-btn">
+                    <span class="btn-text">🚀 Enviar Inscrição</span>
+                    <span class="btn-loading" style="display: none;">📤 Enviando...</span>
+                </button>
+            </form>
+        </div>
+</body>
+<script src="../js/script.js"></script>
+</html>

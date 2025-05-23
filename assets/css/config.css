@@ -1,0 +1,36 @@
+:root {
+  --primary-blue: #000270;
+  --accent-yellow: #ffe259;
+  --yellow-red: #ffd208;
+  --white: #ffffff;
+  --gray-light: #f4f4f4;
+  --gray: #e0e0e0;
+  --dark: #222;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.highlight {
+  color: var(--yellow-red);
+  text-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.25),
+    0 0 2px #000270;             
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.4em;          
+  text-underline-offset: -0.05em;            
+  text-decoration-color: rgba(0, 2, 112, .35); 
+}
+
+textarea {
+  resize: none;
+}
