@@ -93,10 +93,10 @@
 
 .btn-inscrever {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 22px 34px;
   background-color: var(--accent-yellow);
   color: var(--primary-blue);
-  font-size: 16px;
+  font-size: 28px;
   font-weight: bold;
   text-decoration: none;
   border: none;
@@ -148,7 +148,7 @@
   .btn-inscrever {
     width: 100%;
     text-align: center;
-    padding: 14px 0;
+    padding: 16px 8px;
     font-size: 18px;
   }
 }
